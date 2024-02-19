@@ -15,13 +15,13 @@ docker build -t go-scaling .
 docker buildx build --push --platform=linux/amd64,linux/arm64 -t <docker-hub-username>/go-scaling .
 ```
 
-### Endpoints
+## Endpoints
 
 - `/compute/{fibNumber}`: Allows you to calculate the n-th fibonacci number. Produces a lot of load on the http server depends on the number. Don't go higher than 45 if you do you will not get a response until the end of time 😉
 - `/escalate`: Behind this endpoint is an empty infinity loop. That means the http server behind will go up to 100% CPU load immediately.
 - `/stopescalate`: This endpoint will stop the infinite loop.
 
-## Kubernetes port Forwarding for Service
+## Kubernetes Port-Forwarding
 
 This command allow you to forward kubernetes ressources running inside your kubernetes cluster and bind it to a port on your local machine for testing purposes.
 

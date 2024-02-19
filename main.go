@@ -36,10 +36,10 @@ func computeHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Perform CPU-intensive computations with the specified Fibonacci number
-	doIntensiveComputation(fibNum)
+	result := fibonacci(fibNum)
 
-	// Return HTTP 200 OK with an empty response
-	w.WriteHeader(http.StatusOK)
+	// Return the fibonacci result
+	w.Write([]byte(fmt.Sprintf("Fibonacci(%d) = %d", fibNum, result)))
 }
 
 func doIntensiveComputation(n int) {
