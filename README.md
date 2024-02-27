@@ -66,3 +66,24 @@ https://www.inmotionhosting.com/support/edu/wordpress/performance/stress-test-wi
 - Windows: https://code.google.com/archive/p/siege-windows/
 
 `siege -c10 -t1M http://example.com/ http://localhost:8080/compute/30` -> Will make 10 concurrent requests for 1 minute with live output.
+
+### Install NGINX Ingress Controller
+
+### Install Helm Package Manager
+
+https://helm.sh/docs/intro/install/
+
+### Add Bitnami Repo for helm chart
+
+```bash
+# Add Bitnami Repo for helm
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+```
+
+## Install NGINX Ingress
+
+```bash
+# Install nginx-ingress
+helm upgrade --install nginx-ingress bitnami/nginx-ingress-controller --namespace nginx-ingress --create-namespace
+```
